@@ -19,6 +19,9 @@ Use these structures in the existing project documentation or a small report. Ke
 
 Keep evidence references resolvable. Do not write fictitious evidence IDs as if capture files exist. Distinguish directly inspecting source from inferring implementation from behavior.
 
+When REA produced the row, put its `evidence_id` (`ev_<sha256>`) in the location column and its
+`subject.digest.sha256` in the brief — that turns the row into something a reader can re-check.
+
 ## Workflow and contract record
 
 | Initial state and role | Action | Observed result | Request/response shape | Evidence or unknown |

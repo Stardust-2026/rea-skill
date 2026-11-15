@@ -1,8 +1,8 @@
 interface:
-  display_name: IRA — Inspect Rebuild Applications
-  short_description: Investigate web apps, plan improvements, and verify rebuilds
-  default_prompt: Use $ira to investigate this web app, map the evidence and gaps,
-    and implement and verify the requested features.
+  display_name: REA — Reverse Engineer Anything
+  short_description: Inspect web apps and shipped binaries, then rebuild them
+  default_prompt: Use $rea to investigate this target, map the evidence and gaps, and
+    implement and verify the requested features.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
