@@ -63,6 +63,24 @@ rea setup --client hermes --skill=false   # --skill=false keeps THIS skill as th
 rea doctor --provider ghidra --json
 ```
 
+## Any model, including open ones
+
+REA the engine ships no model of its own. Its 42 dependencies include no LLM SDK, and no provider API
+key is read anywhere in the installed package. It is a deterministic tool server — parsing,
+decompiling, hashing, comparing — so the model is whichever agent is driving it. DeepSeek, Qwen, a
+local llama.cpp model or a hosted frontier model all work identically.
+
+Registering it with a DeepSeek-driven agent instead of Hermes:
+
+```bash
+rea setup --client dsh --yes --json     # DeepSeek Harness -> ~/.dsh/cordis.patch.yml
+```
+
+One caveat, stated rather than glossed: REA's own documentation says its DeepSeek Harness integration
+was verified against a local model fixture and that live DeepSeek API compatibility was unverified at
+the time of writing. The tool layer does not care which model is on the other end, but the harness
+wiring is the less-tested path of the two.
+
 ## References
 
 - [Tool selection](references/tool-selection.md) — instrument choice with its boundaries

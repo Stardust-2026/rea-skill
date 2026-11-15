@@ -137,7 +137,9 @@ Web/JS work needs none of this; Ghidra alone covers PE, ELF and Mach-O.
    `support/analyzeHeadless` executable, `JAVA_HOME/bin/java -version` above the declared floor.
 6. **Export the variables, then let `rea setup` persist them.** A `GHIDRA_INSTALL_DIR` in your shell
    never reaches a registered MCP server: `rea setup --client hermes --dry-run --json` shows the
-   detected provider environment, `--yes` writes it into `mcp_servers.rea.env`. Repeat for `dsh`.
+   detected provider environment, `--yes` writes it into `mcp_servers.rea.env`. Repeat for `dsh` when
+   the agent is DeepSeek-driven (REA ships no model of its own, so any agent model — DeepSeek, Qwen,
+   local llama.cpp, or a hosted frontier model — drives the same tool set).
    Pass `--skill=false` so the vendor does not also install its own workflow skill beside this one.
 7. **Skip the gateway restart while a chat is live.** `/reload-mcp` re-reads `config.yaml` and rebuilds
    the cached agent in place.
